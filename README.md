@@ -87,3 +87,14 @@ assets/project-name.webp
 ```
 
 Use manual paths if you prefer uploading optimized images directly into the `assets/` folder.
+
+
+## System theme
+
+The website now follows the visitor's device/browser theme by default using `prefers-color-scheme`. The theme button cycles between:
+
+```text
+System → Light → Dark
+```
+
+`System` is recommended because it automatically follows the user's phone, laptop, or browser appearance setting.

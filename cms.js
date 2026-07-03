@@ -27,17 +27,31 @@ function persistBrowser() {
   localStorage.setItem(KEY, JSON.stringify(data));
 }
 
+function getThemePreference() {
+  const saved = localStorage.getItem(THEME_KEY);
+  return ['system', 'light', 'dark'].includes(saved) ? saved : 'system';
+}
+
+function setThemePreference(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem(THEME_KEY, theme);
+  const button = $('#theme-toggle');
+  if (button) {
+    const label = theme === 'system' ? 'System' : theme === 'dark' ? 'Dark' : 'Light';
+    button.textContent = label;
+    button.setAttribute('aria-label', `Color theme: ${label}. Click to change.`);
+    button.title = `Theme: ${label}`;
+  }
+}
+
 function initTheme() {
-  const saved = localStorage.getItem(THEME_KEY) || 'light';
-  document.documentElement.dataset.theme = saved;
+  setThemePreference(getThemePreference());
   const button = $('#theme-toggle');
   if (!button) return;
-  button.textContent = saved === 'dark' ? 'Light' : 'Dark';
   button.onclick = () => {
-    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = next;
-    localStorage.setItem(THEME_KEY, next);
-    button.textContent = next === 'dark' ? 'Light' : 'Dark';
+    const current = getThemePreference();
+    const next = current === 'system' ? 'light' : current === 'light' ? 'dark' : 'system';
+    setThemePreference(next);
   };
 }
 
