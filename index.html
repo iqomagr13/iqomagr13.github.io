@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Iqoma Gumelar Rachman — Senior Visual & Product Designer portfolio." />
+  <title>Iqoma Gumelar — Senior Visual & Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=wa-link-1" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#hero" aria-label="Back to top">
+      <span class="brand-mark">IG</span>
+      <span class="brand-text">Iqoma Gumelar</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="#about">Experience</a>
+      <a href="#projects">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="header-theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">Dark</button>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-blueprint" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">The Wireframe Canvas</p>
+        <h1 id="hero-title" class="hero-title">Clean UI. Scalable systems.</h1>
+        <p class="hero-subtitle">Senior Visual & Product Designer bridging UI/UX, branding, design systems, and AI-assisted creative workflow.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Work</a>
+          <a class="button ghost" href="#contact">Let’s Talk</a>
+        </div>
+        <div class="hero-meta" aria-label="Profile highlights">
+          <span>UI/UX Design</span>
+          <span>Design Systems</span>
+          <span>AI Workflow</span>
+        </div>
+      </div>
+      <p class="hero-hint">Move cursor to inspect.</p>
+    </section>
+
+    <section id="about" class="section-shell" aria-labelledby="about-title">
+      <div class="section-kicker">The Smart Component</div>
+      <div class="about-grid">
+        <aside class="summary-card reveal">
+          <p class="eyebrow">About</p>
+          <h3>Structured thinking. Practical execution.</h3>
+          <p id="profile-summary">I translate business and marketing objectives into high-impact visual strategies, scalable design systems, and conversion-driven user experiences.</p>
+          <div class="hero-meta">
+            <span>8+ years</span>
+            <span>Jakarta, Indonesia</span>
+            <span>English Professional</span>
+          </div>
+        </aside>
+        <div>
+          <div class="section-heading reveal">
+            <h2 id="about-title">Experience across product, brand, and campaigns.</h2>
+            <p>Selected professional experience focused on UI/UX, design systems, visual direction, and campaign execution.</p>
+          </div>
+          <div id="experience-list" class="experience-list" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell" aria-labelledby="projects-title">
+      <div class="section-kicker">The Responsive Grid</div>
+      <div class="section-heading reveal">
+        <h2 id="projects-title">Selected work.</h2>
+        <p>A compact overview. Open each card to read the full case study.</p>
+      </div>
+      <div class="viewport-control reveal" aria-label="Viewport resizer slider">
+        <div><strong>Viewport Resizer</strong><span id="viewport-label">Desktop · 1200px</span></div>
+        <input id="viewport-slider" type="range" min="360" max="1200" value="1200" step="20" aria-label="Resize project preview viewport" />
+      </div>
+      <div class="project-lab reveal">
+        <div class="device-mockup" aria-hidden="true">
+          <div class="device-topbar"><span></span><span></span><span></span></div>
+          <div class="device-screen"><div class="mock-sidebar"></div><div class="mock-content"><i></i><i></i><i></i></div></div>
+        </div>
+        <div id="projects-grid" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="section-shell" aria-labelledby="skills-title">
+      <div class="section-kicker">The Interactive Design System</div>
+      <div class="section-heading reveal">
+        <h2 id="skills-title">Tools, craft, AI, and collaboration.</h2>
+        <p>Drag the stickers. Nearby skills connect like prototype noodles.</p>
+      </div>
+      <div class="skills-board reveal" id="skills-board" aria-label="Interactive draggable skills board">
+        <svg id="connector-layer" aria-hidden="true"></svg>
+        <div id="skill-tags" class="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section-shell" aria-labelledby="testimonial-title">
+      <div class="section-kicker">The User Feedback Loop</div>
+      <div class="section-heading reveal">
+        <h2 id="testimonial-title">Feedback loop.</h2>
+        <p>Resolve one comment to reveal the next recommendation.</p>
+      </div>
+      <div class="comment-card reveal" id="testimonial-card">
+        <div class="comment-toolbar"><span>Figma Comment</span><button id="resolve-testimonial" type="button">Resolve</button></div>
+        <blockquote id="testimonial-quote"></blockquote>
+        <p id="testimonial-person"></p>
+      </div>
+    </section>
+
+    <section id="process" class="section-shell" aria-labelledby="process-title">
+      <div class="section-kicker">The Progressive Disclosure Accordion</div>
+      <div class="section-heading reveal">
+        <h2 id="process-title">Process without overload.</h2>
+        <p>Open each stage only when the context is needed.</p>
+      </div>
+      <div class="process-nav reveal" role="tablist" aria-label="Design process" id="process-tabs"></div>
+      <div class="process-panel reveal" id="process-panel"></div>
+    </section>
+
+    <section id="contact" class="section-shell" aria-labelledby="contact-title">
+      <div class="section-kicker">The Perfect Form State</div>
+      <div class="contact-grid">
+        <div class="section-heading reveal">
+          <h2 id="contact-title">Let’s build something clear.</h2>
+          <p>Product design, visual systems, UI/UX audit, AI-assisted workflow, and campaign direction.</p>
+          <div class="social-links">
+            <a id="email-link" href="mailto:iqomagr13@gmail.com">Email</a>
+            <a id="whatsapp-link" href="https://wa.me/6285819720214" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a id="linkedin-link" href="https://linkedin.com/in/Iqoma" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a id="instagram-link" href="https://instagram.com/iqmagr" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+          <div class="contrast-badge" role="note">Accessibility Check: Contrast Ratio 4.5:1 Passed! ✓</div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <label><span>Name</span><input required name="name" autocomplete="name" placeholder="Your name" /><em class="measure">padding: 14px · height: 52px</em></label>
+          <label><span>Email</span><input required name="email" type="email" autocomplete="email" placeholder="you@email.com" /><em class="measure">focus-ring: 2px</em></label>
+          <label><span>Message</span><textarea required name="message" rows="5" placeholder="Tell me about the project..."></textarea><em class="measure">resize-safe area</em></label>
+          <button class="button primary submit-button" type="submit">Send Message</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Iqoma Gumelar Rachman. Built as a static GitHub Pages portfolio.</p>
+    <div class="footer-links"><a href="mailto:iqomagr13@gmail.com">iqomagr13@gmail.com</a><a href="https://wa.me/6285819720214" target="_blank" rel="noreferrer">WhatsApp: 0858-1972-0214</a></div>
+  </footer>
+
+  <script src="app.js?v=wa-link-1"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Manager · Iqoma Gumelar</title>
+  <link rel="stylesheet" href="style.css?v=ux-polish-2" />
+  <style>
+    .admin-wrap{width:min(1180px,calc(100% - 32px));margin:40px auto;display:grid;grid-template-columns:280px 1fr;gap:20px}.admin-card{border:1px solid var(--line);background:var(--surface);border-radius:24px;padding:22px;box-shadow:var(--shadow-soft)}.admin-list{display:grid;gap:10px}.admin-list button{text-align:left;border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:16px;padding:12px;cursor:pointer}.admin-form{display:grid;gap:14px}.admin-form input,.admin-form textarea,.admin-form select{border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:14px;padding:12px;width:100%}.admin-actions{display:flex;gap:10px;flex-wrap:wrap}.admin-preview{margin-top:18px}@media(max-width:800px){.admin-wrap{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">IG</span><span class="brand-text">Portfolio Manager</span></a><button class="header-theme-toggle" id="theme-toggle" type="button">Dark</button></header>
+  <main class="admin-wrap">
+    <aside class="admin-card"><p class="eyebrow">CMS Panel</p><h1 style="font-size:2rem;line-height:1;margin:0 0 18px">Portfolio Manager</h1><div class="admin-actions"><button class="button primary" id="new-project" type="button">New Project</button><button class="button ghost" id="export-json" type="button">Export JSON</button></div><div id="project-list" class="admin-list" style="margin-top:18px"></div></aside>
+    <section class="admin-card"><form id="admin-form" class="admin-form"><input name="id" placeholder="project-id"><input name="title" placeholder="Title"><input name="category" placeholder="Category"><input name="role" placeholder="Role"><input name="year" placeholder="Year"><select name="status"><option>Published</option><option>Draft</option><option>Scheduled</option></select><input name="image" placeholder="Image path e.g. assets/project.webp"><textarea name="summary" rows="3" placeholder="Summary"></textarea><textarea name="impact" rows="3" placeholder="Impact"></textarea><textarea name="problem" rows="4" placeholder="Problem"></textarea><textarea name="goal" rows="4" placeholder="Goal"></textarea><textarea name="process" rows="5" placeholder="Process, one item per line"></textarea><textarea name="solution" rows="5" placeholder="Solution, one item per line"></textarea><textarea name="tools" rows="3" placeholder="Tools, one item per line"></textarea><div class="admin-actions"><button class="button primary" type="submit">Save to Browser</button><button class="button ghost" id="delete-project" type="button">Delete</button></div></form><div class="admin-preview" id="admin-preview"></div></section>
+  </main>
+  <script src="cms.js?v=clean-rebuild-1"></script>
+</body>
+</html>

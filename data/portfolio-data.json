@@ -1,0 +1,419 @@
+{
+  "profile": {
+    "name": "Iqoma Gumelar Rachman",
+    "shortName": "Iqoma Gumelar",
+    "role": "Senior Visual & Product Designer",
+    "headline": "Clean UI. Scalable systems.",
+    "subheadline": "I design user-centered interfaces, visual systems, and digital experiences that connect business goals with clear execution.",
+    "summary": "Senior Visual & Product Designer with 8+ years across UI/UX, branding, digital marketing, design systems, and AI-assisted creative workflow.",
+    "location": "Jakarta, Indonesia",
+    "email": "iqomagr13@gmail.com",
+    "phone": "0858-1972-0214",
+    "linkedin": "https://linkedin.com/in/Iqoma",
+    "instagram": "https://instagram.com/iqmagr",
+    "whatsapp": "https://wa.me/6285819720214"
+  },
+  "experience": [
+    {
+      "company": "Phintraco Technology",
+      "location": "Jakarta, Indonesia",
+      "role": "Senior Visual Designer",
+      "period": "Jul 2022 \u2013 Aug 2025",
+      "highlights": [
+        "Built and maintained a company-wide design system.",
+        "Reduced design-to-development handoff time by 30%.",
+        "Led UI/UX iteration with Product Managers and Developers."
+      ]
+    },
+    {
+      "company": "Rifeng Indonesia",
+      "location": "Jakarta, Indonesia",
+      "role": "Digital Marketing Designer",
+      "period": "Jul 2021 \u2013 Jun 2022",
+      "highlights": [
+        "Created high-impact campaign visuals for digital channels.",
+        "Directed product photography and commercial video production."
+      ]
+    },
+    {
+      "company": "JCB International Indonesia",
+      "location": "Jakarta, Indonesia",
+      "role": "Marketing Communication Officer (Visual Lead)",
+      "period": "Oct 2020 \u2013 Jun 2021",
+      "highlights": [
+        "Led visual production for internal and external communications.",
+        "Distributed promotional materials across 130+ outlets."
+      ]
+    },
+    {
+      "company": "Docotel World",
+      "location": "Jakarta, Indonesia",
+      "role": "Graphic Designer",
+      "period": "Jul 2019 \u2013 Jun 2020",
+      "highlights": [
+        "Designed logos and visual identities for internal products.",
+        "Collaborated with developers to align UI assets with implementation."
+      ]
+    },
+    {
+      "company": "PIO Digital",
+      "location": "Jakarta, Indonesia",
+      "role": "Art Director",
+      "period": "Jun 2017 \u2013 Jul 2019",
+      "highlights": [
+        "Directed integrated social media campaign visuals.",
+        "Managed creative output and design quality for client work."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "palace-park-pos-system",
+      "title": "Palace Park POS System",
+      "category": "Product Design / POS System",
+      "status": "Published",
+      "role": "UI/UX Designer",
+      "year": "2026",
+      "summary": "A role-based POS concept created after observing that Palace Park still handled transaction counting manually.",
+      "impact": "Helps streamline cashier flow, reduce manual calculation errors, improve stock visibility, and give management clearer sales reporting.",
+      "image": "assets/palace-park-pos-system.png",
+      "problem": "Palace Park operations still relied on manual transaction counting and fragmented reporting, making sales, stock, and tenant performance harder to track accurately.",
+      "goal": "Design a simple POS system that helps cashiers record transactions faster, supports stock visibility, and gives management a clearer operational overview.",
+      "users": [
+        "Super Admin",
+        "Tenant Admin",
+        "Cashier / Usher",
+        "Finance / Management"
+      ],
+      "process": [
+        "Observed manual sales calculation and reporting workflow.",
+        "Defined the need for faster cashier flow and clearer transaction records.",
+        "Mapped role-based access for super admin, tenant, cashier, and finance operations.",
+        "Designed core POS screens for sales, stock, receipts, and reporting.",
+        "Used an AI-assisted workflow with ChatGPT to accelerate planning, structure, and iteration."
+      ],
+      "solution": [
+        "Role-based access for different operational needs.",
+        "POS transaction flow with menu selection, cart, payment method, and receipt structure.",
+        "Stock visibility so unavailable items can be marked and controlled.",
+        "Dashboard-ready sales data for total revenue, tenant performance, and payment breakdown."
+      ],
+      "outcome": "The concept transforms manual calculation into a structured digital workflow, reducing operational friction and making transaction records easier to review.",
+      "tools": [
+        "Figma",
+        "ChatGPT",
+        "HTML/CSS/JavaScript structure",
+        "GitHub Pages workflow"
+      ],
+      "sections": [
+        {
+          "title": "Background",
+          "body": "The project started from a real operational observation: sales calculation was still handled manually. This created a need for a lightweight POS experience that could be used by multiple roles without making the workflow complicated."
+        },
+        {
+          "title": "Design Direction",
+          "body": "The interface prioritizes speed, clarity, and role-based simplicity. The core experience focuses on cashier flow, menu availability, receipt output, and simple reporting."
+        },
+        {
+          "title": "AI-assisted Workflow",
+          "body": "ChatGPT was used to structure product logic, define role permissions, break down features, and accelerate iteration while keeping design decisions grounded in the operational problem."
+        }
+      ]
+    },
+    {
+      "id": "phinter-hris-mobile-uiux",
+      "title": "Phinter HRIS Mobile UI/UX",
+      "category": "Mobile UI/UX / HRIS Product",
+      "status": "Published",
+      "role": "Lead UI/UX Designer",
+      "year": "2022\u20132025",
+      "summary": "Mobile-first HRIS experience for attendance, leave requests, company news, and employee administrative tasks.",
+      "impact": "Simplified daily HR workflows and supported faster handoff through reusable components.",
+      "image": "",
+      "problem": "Legacy HR workflows were difficult to manage, causing friction in attendance tracking, leave requests, and employee communication.",
+      "goal": "Transform complex HR workflows into a seamless mobile-first experience with clear navigation and accessible UI for employees aged 25\u201350.",
+      "users": [
+        "Employees",
+        "HR Department",
+        "Management",
+        "Developers"
+      ],
+      "process": [
+        "Map HR pain points",
+        "Define accessible mobile-first flows",
+        "Build Figma prototypes",
+        "Create reusable components",
+        "Align HR utility and stakeholder branding"
+      ],
+      "solution": [
+        "Dashboard with attendance data",
+        "Quick action navigation",
+        "Integrated company news",
+        "Scalable design system"
+      ],
+      "outcome": "The simplified attendance flow reduced user friction and the design system enabled faster handoff to development.",
+      "tools": [
+        "Figma",
+        "Design System",
+        "Prototyping",
+        "Stakeholder Review"
+      ],
+      "sections": [
+        {
+          "title": "Design Challenge",
+          "body": "The interface needed to balance HR utility, executive aesthetic preferences, corporate credibility, and accessibility."
+        },
+        {
+          "title": "Impact",
+          "body": "The final direction gained stakeholder approval and improved clarity for attendance, company news, and administrative tasks."
+        }
+      ]
+    },
+    {
+      "id": "mecs-website-redesign",
+      "title": "MECS Website Redesign",
+      "category": "Web UI/UX / Corporate Website",
+      "status": "Published",
+      "role": "UI/UX Designer",
+      "year": "2025",
+      "summary": "Corporate website redesign to modernize the brand image, improve hierarchy, and clarify services for B2B users.",
+      "impact": "Elevated corporate credibility through cleaner layout, stronger hierarchy, and clearer CTA structure.",
+      "image": "",
+      "problem": "The previous website felt static, outdated, and lacked strong hierarchy, making service communication less clear for B2B decision makers.",
+      "goal": "Modernize the corporate website while keeping the brand credible, formal, and aligned with stakeholder expectations.",
+      "users": [
+        "HR Managers",
+        "Directors",
+        "Business Owners",
+        "Corporate Stakeholders"
+      ],
+      "process": [
+        "Audit outdated hierarchy",
+        "Align stakeholder preferences",
+        "Explore visual directions",
+        "Apply modern typography",
+        "Refine corporate UI"
+      ],
+      "solution": [
+        "Cleaner corporate layout",
+        "Modern typography",
+        "Consistent spacing system",
+        "Clearer call-to-action structure"
+      ],
+      "outcome": "The redesign improved perceived professionalism, clarified services, and helped the company present a more credible digital presence.",
+      "tools": [
+        "Figma",
+        "UI Audit",
+        "Stakeholder Alignment",
+        "Corporate Web Design"
+      ],
+      "sections": [
+        {
+          "title": "Core Challenge",
+          "body": "Different stakeholders had different visual preferences, so the design needed to balance bold modern visuals and conservative corporate expectations."
+        },
+        {
+          "title": "Learning",
+          "body": "Stakeholder alignment is crucial in corporate projects because structure and clarity often define perceived professionalism."
+        }
+      ]
+    },
+    {
+      "id": "apta-living-social-media-strategy",
+      "title": "APTA Living Social Media Strategy",
+      "category": "Digital Marketing / Content Strategy",
+      "status": "Published",
+      "role": "Social Media Manager & Content Creator",
+      "year": "2026",
+      "summary": "Localized social media strategy across Bali, BSD, and Pekanbaru using Instagram paid campaigns and TikTok organic content.",
+      "impact": "Improved engagement through hook and retention optimization, strengthened regional positioning, and increased responsiveness.",
+      "image": "",
+      "problem": "A furniture brand needed localized content strategies across Bali, BSD, and Pekanbaru while maintaining efficient Instagram ads and organic TikTok engagement.",
+      "goal": "Improve engagement, strengthen brand positioning, and tailor content based on audience behavior in each showroom region.",
+      "users": [
+        "Furniture Buyers",
+        "Villa Owners",
+        "Cafe Owners",
+        "Residential Customers"
+      ],
+      "process": [
+        "Segment audience",
+        "Plan localized content",
+        "Write hooks and captions",
+        "Direct production",
+        "Optimize CTR, CPC, engagement, and retention"
+      ],
+      "solution": [
+        "Premium Bali visuals",
+        "Lifestyle BSD content",
+        "Promo-driven Pekanbaru content",
+        "Platform-specific content approach"
+      ],
+      "outcome": "The strategy improved content relevance, strengthened regional positioning, and increased responsiveness across social platforms.",
+      "tools": [
+        "Meta Ads",
+        "TikTok",
+        "Content Strategy",
+        "Photography Direction",
+        "Google Sheets"
+      ],
+      "sections": [
+        {
+          "title": "Market Segmentation",
+          "body": "The strategy separated audience needs by showroom: Bali for premium villa and expat context, BSD for residential and F&B use, and Pekanbaru for value-driven messaging."
+        },
+        {
+          "title": "Optimization",
+          "body": "Content was refined through hooks, retention signals, CTR, CPC, engagement, and audience interaction."
+        }
+      ]
+    },
+    {
+      "id": "phintraco-design-system",
+      "title": "Company-wide Design System",
+      "category": "Design System / Product Design",
+      "status": "Published",
+      "role": "Senior Visual Designer",
+      "year": "2022\u20132025",
+      "summary": "Reusable components and standards to unify UI consistency across web and mobile products.",
+      "impact": "30% faster design-to-development handoff and clearer implementation standards across product teams.",
+      "image": "",
+      "problem": "UI components and implementation patterns needed stronger consistency across web and mobile products.",
+      "goal": "Create reusable components, visual standards, and documentation that improve product consistency and developer handoff.",
+      "users": [
+        "Product Designers",
+        "Developers",
+        "Product Managers",
+        "Internal Product Teams"
+      ],
+      "process": [
+        "Audit component inconsistency",
+        "Define tokens",
+        "Document Figma components",
+        "Align with developers",
+        "Review implementation quality"
+      ],
+      "solution": [
+        "Reusable Figma components",
+        "Design tokens",
+        "Component documentation",
+        "Developer-aligned handoff"
+      ],
+      "outcome": "The design system reduced handoff time by 30% and improved UI consistency across product teams.",
+      "tools": [
+        "Figma",
+        "Design System",
+        "Component Library",
+        "Developer Handoff"
+      ],
+      "sections": [
+        {
+          "title": "System Audit",
+          "body": "The process began by identifying inconsistent interface patterns and handoff gaps across product teams."
+        },
+        {
+          "title": "Impact",
+          "body": "The system helped teams work faster, reduce ambiguity, and keep UI quality more consistent across platforms."
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "designExpertise": [
+      "Visual Branding",
+      "Campaign Design",
+      "UI/UX Design",
+      "Design Systems",
+      "Wireframing",
+      "Prototyping",
+      "Motion Graphics",
+      "Art Direction",
+      "AI-Assisted Design Workflow",
+      "Generative AI Visual Ideation",
+      "AI Content Optimization",
+      "AI-supported Creative Research"
+    ],
+    "software": [
+      "Figma",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "After Effects",
+      "Premiere Pro",
+      "Adobe XD",
+      "Sketch",
+      "Final Cut Pro",
+      "Meta Ads",
+      "TikTok"
+    ],
+    "collaboration": [
+      "Notion",
+      "Google Sheets",
+      "Whimsical",
+      "FigJam",
+      "Slack"
+    ],
+    "softSkills": [
+      "Strategic Visual Thinking",
+      "Data-driven Decision Making",
+      "Audience Analysis",
+      "A/B Testing",
+      "Content Strategy",
+      "Creative Direction",
+      "Mentoring",
+      "Cross-functional Collaboration",
+      "Stakeholder Alignment",
+      "Brand Consistency"
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Iqoma connects visual quality with product logic. His design system work made collaboration between design and development much clearer.",
+      "name": "Former Product Manager",
+      "role": "Product Team Collaborator"
+    },
+    {
+      "quote": "He brings strong art direction, structured thinking, and reliable execution across campaigns, UI assets, and brand systems.",
+      "name": "Former Creative Lead",
+      "role": "Creative Team Supervisor"
+    },
+    {
+      "quote": "A designer who can translate business goals into clean visuals and practical design decisions.",
+      "name": "Former Client / Stakeholder",
+      "role": "Marketing Stakeholder"
+    }
+  ],
+  "caseStudy": {
+    "steps": [
+      {
+        "label": "Research",
+        "title": "Research & Understanding",
+        "body": "Understand business goals, audience behavior, user pain points, stakeholder expectations, and market context.",
+        "metric": "Goals + audience context"
+      },
+      {
+        "label": "Strategy",
+        "title": "Strategy & Planning",
+        "body": "Define content direction, visual approach, campaign objectives, UI hierarchy, and brand expression.",
+        "metric": "Clear direction"
+      },
+      {
+        "label": "Design",
+        "title": "Design & Execution",
+        "body": "Create visuals, interface flows, design systems, and responsive components aligned with strategy.",
+        "metric": "Figma-ready output"
+      },
+      {
+        "label": "Optimize",
+        "title": "Testing & Optimization",
+        "body": "Analyze engagement, CTR, retention, usability feedback, and stakeholder review to refine the solution.",
+        "metric": "Measured improvement"
+      },
+      {
+        "label": "Iterate",
+        "title": "Delivery & Iteration",
+        "body": "Prepare assets for handoff, maintain consistency, and improve based on insights and implementation reality.",
+        "metric": "Consistent delivery"
+      }
+    ]
+  }
+}
