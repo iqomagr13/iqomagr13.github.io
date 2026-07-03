@@ -89,12 +89,6 @@ assets/project-name.webp
 Use manual paths if you prefer uploading optimized images directly into the `assets/` folder.
 
 
-## System theme
+## Stable repair build
 
-The website now follows the visitor's device/browser theme by default using `prefers-color-scheme`. The theme button cycles between:
-
-```text
-System → Light → Dark
-```
-
-`System` is recommended because it automatically follows the user's phone, laptop, or browser appearance setting.
+This build includes complete JavaScript files (`app.js`, `portfolio-detail.js`, `cms.js`), system/light/dark theme support, portfolio detail pages, and CMS photo upload. Upload all files to the repository root, then commit and push.
