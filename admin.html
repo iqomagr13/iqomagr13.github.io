@@ -4,17 +4,105 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio Manager · Iqoma Gumelar</title>
-  <link rel="stylesheet" href="style.css?v=ux-polish-2" />
+  <link rel="stylesheet" href="style.css?v=cms-photo-upload-1" />
   <style>
-    .admin-wrap{width:min(1180px,calc(100% - 32px));margin:40px auto;display:grid;grid-template-columns:280px 1fr;gap:20px}.admin-card{border:1px solid var(--line);background:var(--surface);border-radius:24px;padding:22px;box-shadow:var(--shadow-soft)}.admin-list{display:grid;gap:10px}.admin-list button{text-align:left;border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:16px;padding:12px;cursor:pointer}.admin-form{display:grid;gap:14px}.admin-form input,.admin-form textarea,.admin-form select{border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:14px;padding:12px;width:100%}.admin-actions{display:flex;gap:10px;flex-wrap:wrap}.admin-preview{margin-top:18px}@media(max-width:800px){.admin-wrap{grid-template-columns:1fr}}
+    body{min-height:100vh;background:var(--bg);color:var(--text)}
+    .admin-wrap{width:min(1180px,calc(100% - 32px));margin:40px auto;display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start}
+    .admin-card{border:1px solid var(--line);background:var(--surface);border-radius:24px;padding:22px;box-shadow:var(--shadow-soft)}
+    .admin-side{position:sticky;top:92px}
+    .admin-list{display:grid;gap:10px;margin-top:18px;max-height:62vh;overflow:auto;padding-right:4px}
+    .admin-list button{text-align:left;border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:16px;padding:12px;cursor:pointer;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;transition:160ms ease}
+    .admin-list button:hover,.admin-list button.is-active{border-color:var(--blue);transform:translateY(-1px)}
+    .admin-thumb{width:44px;height:44px;border-radius:12px;background:var(--surface-solid);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;color:var(--muted);font-size:.72rem;font-weight:900}
+    .admin-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .admin-form{display:grid;gap:14px}
+    .field{display:grid;gap:8px}
+    .field span{font-size:.78rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+    .admin-form input,.admin-form textarea,.admin-form select{border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:14px;padding:12px;width:100%;font:inherit;outline:none;transition:160ms ease}
+    .admin-form input:focus,.admin-form textarea:focus,.admin-form select:focus{border-color:var(--blue);box-shadow:0 0 0 4px color-mix(in srgb,var(--blue) 12%,transparent)}
+    .admin-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .admin-preview{margin-top:18px}
+    .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .photo-uploader{border:1px dashed color-mix(in srgb,var(--blue) 52%,var(--line));border-radius:20px;background:linear-gradient(135deg,color-mix(in srgb,var(--blue) 8%,transparent),var(--surface-2));padding:16px;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;cursor:pointer;transition:160ms ease}
+    .photo-uploader:hover,.photo-uploader.is-dragging{border-color:var(--blue);transform:translateY(-1px);box-shadow:0 16px 34px rgba(47,107,255,.12)}
+    .photo-preview{width:96px;height:96px;border-radius:18px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;overflow:hidden;color:var(--muted);font-weight:900;font-size:.76rem;text-align:center;padding:10px}
+    .photo-preview img{width:100%;height:100%;object-fit:cover;display:block}
+    .upload-copy strong{display:block;color:var(--heading);font-size:1rem;margin-bottom:6px}.upload-copy p{margin:0;color:var(--muted);line-height:1.55;font-size:.92rem}
+    .upload-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.mini-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:8px 11px;font-weight:800;cursor:pointer}.mini-btn:hover{border-color:var(--blue)}
+    .upload-progress{height:8px;border-radius:999px;background:var(--surface-solid);overflow:hidden;margin-top:12px;border:1px solid var(--line)}.upload-progress span{display:block;height:100%;width:0;background:var(--blue);transition:width 180ms ease}
+    .upload-message{margin-top:10px;color:var(--muted);font-size:.88rem}.upload-message.error{color:#dc2626}.upload-message.success{color:#16935f}
+    .admin-note{color:var(--muted);line-height:1.65;font-size:.92rem;margin:14px 0 0}.admin-note code{background:var(--surface-2);border:1px solid var(--line);padding:2px 6px;border-radius:8px}
+    @media(max-width:900px){.admin-wrap{grid-template-columns:1fr}.admin-side{position:relative;top:auto}.form-grid-2{grid-template-columns:1fr}}
+    @media(max-width:560px){.photo-uploader{grid-template-columns:1fr}.photo-preview{width:100%;height:180px}}
   </style>
 </head>
 <body>
-  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">IG</span><span class="brand-text">Portfolio Manager</span></a><button class="header-theme-toggle" id="theme-toggle" type="button">Dark</button></header>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">IG</span><span class="brand-text">Portfolio Manager</span></a>
+    <button class="header-theme-toggle" id="theme-toggle" type="button">Dark</button>
+  </header>
+
   <main class="admin-wrap">
-    <aside class="admin-card"><p class="eyebrow">CMS Panel</p><h1 style="font-size:2rem;line-height:1;margin:0 0 18px">Portfolio Manager</h1><div class="admin-actions"><button class="button primary" id="new-project" type="button">New Project</button><button class="button ghost" id="export-json" type="button">Export JSON</button></div><div id="project-list" class="admin-list" style="margin-top:18px"></div></aside>
-    <section class="admin-card"><form id="admin-form" class="admin-form"><input name="id" placeholder="project-id"><input name="title" placeholder="Title"><input name="category" placeholder="Category"><input name="role" placeholder="Role"><input name="year" placeholder="Year"><select name="status"><option>Published</option><option>Draft</option><option>Scheduled</option></select><input name="image" placeholder="Image path e.g. assets/project.webp"><textarea name="summary" rows="3" placeholder="Summary"></textarea><textarea name="impact" rows="3" placeholder="Impact"></textarea><textarea name="problem" rows="4" placeholder="Problem"></textarea><textarea name="goal" rows="4" placeholder="Goal"></textarea><textarea name="process" rows="5" placeholder="Process, one item per line"></textarea><textarea name="solution" rows="5" placeholder="Solution, one item per line"></textarea><textarea name="tools" rows="3" placeholder="Tools, one item per line"></textarea><div class="admin-actions"><button class="button primary" type="submit">Save to Browser</button><button class="button ghost" id="delete-project" type="button">Delete</button></div></form><div class="admin-preview" id="admin-preview"></div></section>
+    <aside class="admin-card admin-side">
+      <p class="eyebrow">CMS Panel</p>
+      <h1 style="font-size:2rem;line-height:1;margin:0 0 18px">Portfolio Manager</h1>
+      <div class="admin-actions">
+        <button class="button primary" id="new-project" type="button">New Project</button>
+        <button class="button ghost" id="export-json" type="button">Export JSON</button>
+      </div>
+      <p class="admin-note">Edit works here, upload the project photo, then export <code>portfolio-data.json</code> and replace it in GitHub.</p>
+      <div id="project-list" class="admin-list" aria-label="Portfolio project list"></div>
+    </aside>
+
+    <section class="admin-card">
+      <form id="admin-form" class="admin-form">
+        <div class="form-grid-2">
+          <label class="field"><span>Project ID</span><input name="id" placeholder="project-id"></label>
+          <label class="field"><span>Status</span><select name="status"><option>Published</option><option>Draft</option><option>Scheduled</option></select></label>
+        </div>
+
+        <label class="field"><span>Title</span><input name="title" placeholder="Title"></label>
+        <div class="form-grid-2">
+          <label class="field"><span>Category</span><input name="category" placeholder="Category"></label>
+          <label class="field"><span>Role</span><input name="role" placeholder="Role"></label>
+        </div>
+        <label class="field"><span>Year</span><input name="year" placeholder="Year"></label>
+
+        <label class="field"><span>Portfolio / Works Photo</span><input name="image" id="image-path" placeholder="Image path or uploaded image data"></label>
+        <div class="photo-uploader" id="photo-uploader" role="button" tabindex="0" aria-label="Upload portfolio project photo">
+          <div class="photo-preview" id="photo-preview">No image</div>
+          <div class="upload-copy">
+            <strong>Drag & drop project photo here</strong>
+            <p>Accepts PNG, JPG, or WebP. Keep it under 2MB so the GitHub Pages portfolio stays fast.</p>
+            <div class="upload-tools">
+              <button class="mini-btn" id="choose-photo" type="button">Choose Photo</button>
+              <button class="mini-btn" id="clear-photo" type="button">Clear Photo</button>
+            </div>
+            <div class="upload-progress" aria-hidden="true"><span id="upload-bar"></span></div>
+            <div class="upload-message" id="upload-message">You can also paste an asset path manually, for example: assets/project.webp</div>
+          </div>
+          <input id="photo-input" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+        </div>
+
+        <label class="field"><span>Summary</span><textarea name="summary" rows="3" placeholder="Short summary for homepage card"></textarea></label>
+        <label class="field"><span>Impact</span><textarea name="impact" rows="3" placeholder="Impact / result"></textarea></label>
+        <label class="field"><span>Problem</span><textarea name="problem" rows="4" placeholder="Problem"></textarea></label>
+        <label class="field"><span>Goal</span><textarea name="goal" rows="4" placeholder="Goal"></textarea></label>
+        <label class="field"><span>Users</span><textarea name="users" rows="3" placeholder="Users, one item per line"></textarea></label>
+        <label class="field"><span>Process</span><textarea name="process" rows="5" placeholder="Process, one item per line"></textarea></label>
+        <label class="field"><span>Solution</span><textarea name="solution" rows="5" placeholder="Solution, one item per line"></textarea></label>
+        <label class="field"><span>Outcome</span><textarea name="outcome" rows="3" placeholder="Outcome / learning"></textarea></label>
+        <label class="field"><span>Tools</span><textarea name="tools" rows="3" placeholder="Tools, one item per line"></textarea></label>
+
+        <div class="admin-actions">
+          <button class="button primary" type="submit">Save to Browser</button>
+          <button class="button ghost" id="delete-project" type="button">Delete</button>
+        </div>
+      </form>
+      <div class="admin-preview" id="admin-preview"></div>
+    </section>
   </main>
-  <script src="cms.js?v=clean-rebuild-1"></script>
+
+  <script src="cms.js?v=cms-photo-upload-1"></script>
 </body>
 </html>

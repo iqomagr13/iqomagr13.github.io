@@ -1,12 +1,296 @@
-const DATA_URL='data/portfolio-data.json';const KEY='iqoma-admin-data';const THEME_KEY='iqoma-portfolio-theme';let data;let current=0;const $=(s,p=document)=>p.querySelector(s);
-function esc(v=''){return String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
-async function load(){const saved=localStorage.getItem(KEY);if(saved)return JSON.parse(saved);const r=await fetch(DATA_URL,{cache:'no-store'});return r.json()}
-function save(){localStorage.setItem(KEY,JSON.stringify(data));renderList();fillForm();preview()}
-function initTheme(){const saved=localStorage.getItem(THEME_KEY)||'light';document.documentElement.dataset.theme=saved;const b=$('#theme-toggle');b.textContent=saved==='dark'?'Light':'Dark';b.onclick=()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;localStorage.setItem(THEME_KEY,n);b.textContent=n==='dark'?'Light':'Dark'}}
-function renderList(){const list=$('#project-list');list.innerHTML=data.projects.map((p,i)=>`<button type="button" data-i="${i}">${esc(p.title)}<br><small>${esc(p.category)}</small></button>`).join('');list.querySelectorAll('button').forEach(b=>b.onclick=()=>{current=Number(b.dataset.i);fillForm();preview()})}
-function fillForm(){const p=data.projects[current];const f=$('#admin-form');Object.keys(p).forEach(k=>{if(!f.elements[k])return;if(Array.isArray(p[k]))f.elements[k].value=p[k].join('\n');else f.elements[k].value=p[k]||''});}
-function readForm(){const f=$('#admin-form');const p=data.projects[current]||{};['id','title','category','role','year','status','image','summary','impact','problem','goal'].forEach(k=>p[k]=f.elements[k].value);['process','solution','tools'].forEach(k=>p[k]=f.elements[k].value.split('\n').map(x=>x.trim()).filter(Boolean));return p}
-function preview(){const p=readForm();$('#admin-preview').innerHTML=`<article class="project-card"><div class="project-visual">${p.image?`<img src="${esc(p.image)}">`:''}</div><div class="project-body"><span class="status-badge">${esc(p.status)}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p><span class="case-study-link">View case study →</span></div></article>`}
-function download(){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='portfolio-data.json';a.click();URL.revokeObjectURL(a.href)}
-async function init(){initTheme();data=await load();renderList();fillForm();preview();$('#admin-form').oninput=preview;$('#admin-form').onsubmit=e=>{e.preventDefault();data.projects[current]=readForm();save()};$('#new-project').onclick=()=>{data.projects.unshift({id:'new-project',title:'New Project',category:'Case Study',role:'Designer',year:'2026',status:'Draft',summary:'',impact:'',image:'',problem:'',goal:'',users:[],process:[],solution:[],outcome:'',tools:[]});current=0;save()};$('#delete-project').onclick=()=>{data.projects.splice(current,1);current=0;save()};$('#export-json').onclick=download}
-init();
+const DATA_URL = 'data/portfolio-data.json';
+const KEY = 'iqoma-admin-data';
+const THEME_KEY = 'iqoma-portfolio-theme';
+const MAX_IMAGE_SIZE = 2 * 1024 * 1024;
+const ALLOWED_IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/webp'];
+
+let data;
+let current = 0;
+const $ = (selector, parent = document) => parent.querySelector(selector);
+
+function esc(value = '') {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+async function load() {
+  const saved = localStorage.getItem(KEY);
+  if (saved) return JSON.parse(saved);
+  const response = await fetch(DATA_URL, { cache: 'no-store' });
+  return response.json();
+}
+
+function persistBrowser() {
+  localStorage.setItem(KEY, JSON.stringify(data));
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY) || 'light';
+  document.documentElement.dataset.theme = saved;
+  const button = $('#theme-toggle');
+  if (!button) return;
+  button.textContent = saved === 'dark' ? 'Light' : 'Dark';
+  button.onclick = () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem(THEME_KEY, next);
+    button.textContent = next === 'dark' ? 'Light' : 'Dark';
+  };
+}
+
+function imagePreviewMarkup(src, title = 'Project') {
+  if (!src) return '<span>No image</span>';
+  return `<img src="${esc(src)}" alt="${esc(title)} preview">`;
+}
+
+function renderList() {
+  const list = $('#project-list');
+  list.innerHTML = data.projects.map((project, index) => `
+    <button type="button" data-i="${index}" class="${index === current ? 'is-active' : ''}">
+      <span class="admin-thumb">${imagePreviewMarkup(project.image, project.title)}</span>
+      <span><strong>${esc(project.title || 'Untitled Project')}</strong><br><small>${esc(project.category || 'Case Study')}</small></span>
+    </button>
+  `).join('');
+  list.querySelectorAll('button').forEach(button => {
+    button.onclick = () => {
+      current = Number(button.dataset.i);
+      fillForm();
+      renderList();
+      preview();
+    };
+  });
+}
+
+function setField(form, key, value) {
+  if (!form.elements[key]) return;
+  form.elements[key].value = Array.isArray(value) ? value.join('\n') : (value || '');
+}
+
+function fillForm() {
+  const project = data.projects[current] || {};
+  const form = $('#admin-form');
+  ['id', 'title', 'category', 'role', 'year', 'status', 'image', 'summary', 'impact', 'problem', 'goal', 'users', 'process', 'solution', 'outcome', 'tools'].forEach(key => setField(form, key, project[key]));
+  updatePhotoPreview(project.image, project.title);
+}
+
+function lines(value = '') {
+  return value.split('\n').map(item => item.trim()).filter(Boolean);
+}
+
+function readForm() {
+  const form = $('#admin-form');
+  const existing = data.projects[current] || {};
+  const project = { ...existing };
+  ['id', 'title', 'category', 'role', 'year', 'status', 'image', 'summary', 'impact', 'problem', 'goal', 'outcome'].forEach(key => {
+    project[key] = form.elements[key]?.value || '';
+  });
+  ['users', 'process', 'solution', 'tools'].forEach(key => {
+    project[key] = lines(form.elements[key]?.value || '');
+  });
+  return project;
+}
+
+function updatePhotoPreview(src, title = 'Project') {
+  $('#photo-preview').innerHTML = imagePreviewMarkup(src, title);
+}
+
+function setUploadMessage(message, type = '') {
+  const messageBox = $('#upload-message');
+  messageBox.className = `upload-message ${type}`.trim();
+  messageBox.textContent = message;
+}
+
+function setUploadProgress(percent = 0) {
+  $('#upload-bar').style.width = `${Math.max(0, Math.min(100, percent))}%`;
+}
+
+function preview() {
+  const project = readForm();
+  updatePhotoPreview(project.image, project.title);
+  $('#admin-preview').innerHTML = `
+    <article class="project-card">
+      <div class="project-visual">${project.image ? `<img src="${esc(project.image)}" alt="${esc(project.title)} preview">` : ''}</div>
+      <div class="project-body">
+        <div class="project-topline"><span class="status-badge">${esc(project.status)}</span><span class="status-badge">${esc(project.year)}</span></div>
+        <h3>${esc(project.title)}</h3>
+        <p>${esc(project.summary)}</p>
+        <div class="card-meta"><span class="status-badge">${esc(project.category)}</span><span class="status-badge">${esc(project.role)}</span></div>
+        <span class="case-study-link">View case study →</span>
+      </div>
+    </article>
+  `;
+}
+
+function saveCurrentProject() {
+  data.projects[current] = readForm();
+  persistBrowser();
+  renderList();
+  fillForm();
+  preview();
+  setUploadMessage('Saved to browser. Export portfolio-data.json when you are ready to publish it to GitHub.', 'success');
+}
+
+function downloadJson() {
+  const latest = readForm();
+  if (data.projects[current]) data.projects[current] = latest;
+  persistBrowser();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'portfolio-data.json';
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+function validateImage(file) {
+  if (!file) return 'No file selected.';
+  if (!ALLOWED_IMAGE_TYPES.includes(file.type)) return 'File must be PNG, JPG, or WebP.';
+  if (file.size > MAX_IMAGE_SIZE) return 'File is too large. Please use an image under 2MB for web optimization.';
+  return '';
+}
+
+function useUploadedImage(file) {
+  const error = validateImage(file);
+  if (error) {
+    setUploadProgress(0);
+    setUploadMessage(error, 'error');
+    return;
+  }
+
+  setUploadProgress(10);
+  setUploadMessage(`Uploading ${file.name}...`);
+  const reader = new FileReader();
+
+  reader.onprogress = (event) => {
+    if (!event.lengthComputable) return;
+    setUploadProgress(Math.round((event.loaded / event.total) * 85));
+  };
+
+  reader.onload = () => {
+    const form = $('#admin-form');
+    form.elements.image.value = reader.result;
+    setUploadProgress(100);
+    setUploadMessage('Photo attached successfully. This image will be stored inside exported portfolio-data.json.', 'success');
+    preview();
+  };
+
+  reader.onerror = () => {
+    setUploadProgress(0);
+    setUploadMessage('Unable to read this file. Please try another image.', 'error');
+  };
+
+  reader.readAsDataURL(file);
+}
+
+function initPhotoUploader() {
+  const uploader = $('#photo-uploader');
+  const input = $('#photo-input');
+  const choose = $('#choose-photo');
+  const clear = $('#clear-photo');
+  const imagePath = $('#image-path');
+
+  choose.onclick = () => input.click();
+  input.onchange = () => useUploadedImage(input.files?.[0]);
+  imagePath.addEventListener('input', () => {
+    setUploadProgress(0);
+    setUploadMessage('Manual image path updated. Preview will follow the value in the image field.');
+    preview();
+  });
+
+  clear.onclick = () => {
+    $('#admin-form').elements.image.value = '';
+    setUploadProgress(0);
+    setUploadMessage('Photo cleared. You can upload a new photo or paste an asset path manually.');
+    preview();
+  };
+
+  uploader.addEventListener('click', (event) => {
+    if (event.target.closest('button')) return;
+    input.click();
+  });
+  uploader.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      input.click();
+    }
+  });
+  ['dragenter', 'dragover'].forEach(eventName => {
+    uploader.addEventListener(eventName, event => {
+      event.preventDefault();
+      uploader.classList.add('is-dragging');
+    });
+  });
+  ['dragleave', 'drop'].forEach(eventName => {
+    uploader.addEventListener(eventName, event => {
+      event.preventDefault();
+      uploader.classList.remove('is-dragging');
+    });
+  });
+  uploader.addEventListener('drop', event => useUploadedImage(event.dataTransfer.files?.[0]));
+}
+
+function createNewProject() {
+  data.projects.unshift({
+    id: 'new-project',
+    title: 'New Project',
+    category: 'Case Study',
+    role: 'Designer',
+    year: '2026',
+    status: 'Draft',
+    summary: '',
+    impact: '',
+    image: '',
+    problem: '',
+    goal: '',
+    users: [],
+    process: [],
+    solution: [],
+    outcome: '',
+    tools: []
+  });
+  current = 0;
+  persistBrowser();
+  renderList();
+  fillForm();
+  preview();
+}
+
+function deleteCurrentProject() {
+  if (!data.projects.length) return;
+  const project = data.projects[current];
+  const confirmed = confirm(`Delete "${project.title || 'this project'}" from browser CMS data?`);
+  if (!confirmed) return;
+  data.projects.splice(current, 1);
+  current = Math.max(0, Math.min(current, data.projects.length - 1));
+  persistBrowser();
+  renderList();
+  fillForm();
+  preview();
+}
+
+async function init() {
+  initTheme();
+  data = await load();
+  if (!Array.isArray(data.projects)) data.projects = [];
+  renderList();
+  fillForm();
+  preview();
+  initPhotoUploader();
+
+  $('#admin-form').addEventListener('input', preview);
+  $('#admin-form').addEventListener('submit', event => {
+    event.preventDefault();
+    saveCurrentProject();
+  });
+  $('#new-project').onclick = createNewProject;
+  $('#delete-project').onclick = deleteCurrentProject;
+  $('#export-json').onclick = downloadJson;
+}
+
+init().catch(error => {
+  console.error(error);
+  document.body.insertAdjacentHTML('afterbegin', '<p style="padding:16px;color:#dc2626">CMS failed to load. Please check data/portfolio-data.json.</p>');
+});

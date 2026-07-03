@@ -60,3 +60,30 @@ This build includes a cleaned homepage, compact portfolio cards, a dedicated `po
 ## Contact Update
 
 WhatsApp direct link has been added: `https://wa.me/6285819720214`.
+
+
+## CMS Photo Upload for Works
+
+The CMS now includes a drag-and-drop photo upload area for each portfolio/work item.
+
+Supported file types:
+
+```text
+PNG, JPG, WebP
+```
+
+Recommended size:
+
+```text
+Under 2MB
+```
+
+When you upload a photo in `admin.html`, the CMS stores it as image data inside the exported `portfolio-data.json`. After editing, click **Export JSON**, then replace `data/portfolio-data.json` in GitHub and commit the change.
+
+You can still use a manual image path, for example:
+
+```text
+assets/project-name.webp
+```
+
+Use manual paths if you prefer uploading optimized images directly into the `assets/` folder.
