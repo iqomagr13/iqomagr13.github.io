@@ -92,3 +92,8 @@ Use manual paths if you prefer uploading optimized images directly into the `ass
 ## Stable repair build
 
 This build includes complete JavaScript files (`app.js`, `portfolio-detail.js`, `cms.js`), system/light/dark theme support, portfolio detail pages, and CMS photo upload. Upload all files to the repository root, then commit and push.
+
+
+## Brand Logo / Favicon
+
+The top bar logo and browser favicon use `assets/iqoma-logo.svg`, with PNG fallbacks in the `assets/` folder.
