@@ -196,6 +196,33 @@ button { cursor: pointer; }
 .header-theme-toggle:hover,
 .theme-toggle:hover { border-color: var(--blue); }
 
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-cv-link {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--heading);
+  color: var(--bg);
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+.header-cv-link:hover,
+.header-cv-link:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+  outline: none;
+}
+
+
 .section-shell {
   width: var(--container);
   margin: 0 auto;
@@ -573,6 +600,7 @@ blockquote { margin: 0 0 18px; color: var(--heading); font-size: clamp(1.3rem, 3
   .detail-nav { top: 10px; border-radius: 24px; padding: 10px; }
   .brand-text { display: none; }
   .main-nav { display: none; }
+  .header-cv-link { min-height: 38px; padding-inline: 12px; font-size: 0.82rem; }
   .header-theme-toggle,
   .theme-toggle { min-height: 38px; padding-inline: 13px; }
   .hero { margin-top: -68px; min-height: 610px; padding-top: 132px; padding-bottom: 72px; --spot: 148px; }
