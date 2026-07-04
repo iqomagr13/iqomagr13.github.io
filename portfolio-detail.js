@@ -103,6 +103,7 @@ function renderDetail(project, profile) {
         <p class="detail-lead">${escapeHtml(project.summary || '')}</p>
         <div class="detail-actions">
           <a class="btn primary" href="index.html#projects">Back to Work</a>
+          <a class="btn secondary" href="assets/Iqoma-Gumelar-Rachman-CV-2026.pdf" download>Download CV</a>
           <a class="btn secondary" href="${escapeHtml(profile.whatsapp || 'https://wa.me/6285819720214')}" target="_blank" rel="noreferrer">Discuss on WhatsApp</a>
         </div>
       </div>

@@ -97,3 +97,14 @@ This build includes complete JavaScript files (`app.js`, `portfolio-detail.js`, 
 ## Brand Logo / Favicon
 
 The top bar logo and browser favicon use `assets/iqoma-logo.svg`, with PNG fallbacks in the `assets/` folder.
+
+
+## Download CV
+
+The CV file is stored at:
+
+```text
+assets/Iqoma-Gumelar-Rachman-CV-2026.pdf
+```
+
+The homepage hero, contact section, footer, and portfolio detail page include a Download CV link.
