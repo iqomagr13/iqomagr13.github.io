@@ -49,6 +49,16 @@ function initTheme() {
 }
 
 async function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    try {
+      return JSON.parse(saved);
+    } catch (error) {
+      console.warn('Saved portfolio data is invalid. Loading website JSON instead.', error);
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  }
+
   const response = await fetch(DATA_URL, { cache: 'no-store' });
   if (!response.ok) throw new Error('Unable to load portfolio data.');
   return response.json();

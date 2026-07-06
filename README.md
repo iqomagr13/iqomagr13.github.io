@@ -108,3 +108,16 @@ assets/Iqoma-Gumelar-Rachman-CV-2026.pdf
 ```
 
 The homepage hero, contact section, footer, and portfolio detail page include a Download CV link.
+
+
+## CMS Photo Upload Behavior
+
+The admin CMS now saves uploaded portfolio/work photos automatically into browser storage using the same storage key as the public website.
+
+Workflow:
+1. Open `admin.html`.
+2. Upload a project photo.
+3. The photo is saved automatically to local browser data.
+4. Open or refresh `index.html` or the project detail page to see the image immediately.
+
+Important: GitHub Pages is static. To make the uploaded image visible to everyone online, use **Export JSON** from the CMS and replace `data/portfolio-data.json` in GitHub, then commit and push.

@@ -2,10 +2,10 @@
   "profile": {
     "name": "Iqoma Gumelar Rachman",
     "shortName": "Iqoma Gumelar",
-    "role": "Senior Visual & Product Designer",
-    "headline": "Clean UI. Scalable systems.",
-    "subheadline": "I design user-centered interfaces, visual systems, and digital experiences that connect business goals with clear execution.",
-    "summary": "Senior Visual & Product Designer with 8+ years across UI/UX, branding, digital marketing, design systems, and AI-assisted creative workflow.",
+    "role": "Creative Technologist | Senior Product Designer | AI-Assisted Full-Stack Developer",
+    "headline": "Designing products. Building smarter systems.",
+    "subheadline": "Creative Technologist and Senior Product Designer with 8+ years across UI/UX, design systems, visual branding, digital marketing, and AI-assisted full-stack development.",
+    "summary": "Creative Technologist and Product Designer with 8+ years of experience designing digital products, visual identities, and marketing campaigns. Recently expanded into AI-assisted full-stack development, building web applications, CMS platforms, and internal business tools that bridge design, technology, and business goals.",
     "location": "Jakarta, Indonesia",
     "email": "iqomagr13@gmail.com",
     "phone": "0858-1972-0214",
@@ -15,54 +15,85 @@
   },
   "experience": [
     {
+      "company": "Self-employed",
+      "location": "Jakarta, Indonesia / Remote",
+      "role": "Freelance Product Designer & AI Solutions Developer",
+      "period": "Mar 2026 – Present",
+      "highlights": [
+        "Designed and developed AI-assisted web applications, landing pages, CMS platforms, and internal business tools for clients.",
+        "Delivered UI/UX design, branding, and digital product prototypes from concept to production-ready MVPs.",
+        "Built responsive websites and portfolio systems while integrating APIs and AI-powered automation.",
+        "Provided visual branding, digital marketing assets, and content strategy for hospitality, lifestyle, and technology businesses.",
+        "Used AI tools to accelerate design, development, documentation, and content production while maintaining quality and consistency."
+      ]
+    },
+    {
+      "company": "Apta Living",
+      "location": "Bali, Indonesia",
+      "role": "Social Media Manager & Content Creator",
+      "period": "Aug 2025 – Mar 2026",
+      "highlights": [
+        "Developed and managed monthly to annual social media and advertising calendars aligned with business goals and campaign objectives.",
+        "Analyzed campaign performance and social metrics to support data-informed decisions, engagement growth, and ROI improvement.",
+        "Produced high-quality content and coordinated talent for campaigns while maintaining brand consistency and audience relevance.",
+        "Applied AI-assisted tools and automation to streamline content planning and reporting workflows."
+      ]
+    },
+    {
       "company": "Phintraco Technology",
       "location": "Jakarta, Indonesia",
       "role": "Senior Visual Designer",
-      "period": "Jul 2022 \u2013 Aug 2025",
+      "period": "Jul 2022 – Aug 2025",
       "highlights": [
-        "Built and maintained a company-wide design system.",
-        "Reduced design-to-development handoff time by 30%.",
-        "Led UI/UX iteration with Product Managers and Developers."
+        "Developed and maintained a company-wide design system to ensure product consistency across teams.",
+        "Designed UI/UX for web and mobile platforms across multiple digital products.",
+        "Led user research initiatives and iterative design improvements with product and development teams.",
+        "Built and prototyped functional AI-assisted web application MVPs to validate product concepts end-to-end.",
+        "Mentored junior designers and improved internal design workflow efficiency."
       ]
     },
     {
       "company": "Rifeng Indonesia",
       "location": "Jakarta, Indonesia",
       "role": "Digital Marketing Designer",
-      "period": "Jul 2021 \u2013 Jun 2022",
+      "period": "Jul 2021 – Jun 2022",
       "highlights": [
-        "Created high-impact campaign visuals for digital channels.",
-        "Directed product photography and commercial video production."
+        "Executed integrated digital campaigns across social and paid channels.",
+        "Produced product photography and commercial video content.",
+        "Strengthened brand positioning and visual consistency across platforms."
       ]
     },
     {
-      "company": "JCB International Indonesia",
+      "company": "JCB Indonesia",
       "location": "Jakarta, Indonesia",
-      "role": "Marketing Communication Officer (Visual Lead)",
-      "period": "Oct 2020 \u2013 Jun 2021",
+      "role": "Marketing Communication Officer",
+      "period": "Oct 2020 – Jun 2021",
       "highlights": [
-        "Led visual production for internal and external communications.",
-        "Distributed promotional materials across 130+ outlets."
+        "Led visual production for nationwide marketing campaigns.",
+        "Coordinated branding alignment with Japan headquarters.",
+        "Designed marketing materials distributed across 130+ outlets."
       ]
     },
     {
       "company": "Docotel World",
       "location": "Jakarta, Indonesia",
       "role": "Graphic Designer",
-      "period": "Jul 2019 \u2013 Jun 2020",
+      "period": "Jul 2019 – Jun 2020",
       "highlights": [
-        "Designed logos and visual identities for internal products.",
-        "Collaborated with developers to align UI assets with implementation."
+        "Produced marketing materials and campaign visuals.",
+        "Collaborated with developers for product alignment.",
+        "Maintained brand visual standards."
       ]
     },
     {
-      "company": "PIO Digital",
+      "company": "Pio Digital",
       "location": "Jakarta, Indonesia",
-      "role": "Art Director",
-      "period": "Jun 2017 \u2013 Jul 2019",
+      "role": "Graphic Designer to Art Director",
+      "period": "Jun 2017 – Jul 2019",
       "highlights": [
-        "Directed integrated social media campaign visuals.",
-        "Managed creative output and design quality for client work."
+        "Directed visual campaigns and social media content.",
+        "Led conceptual development with creative and account teams.",
+        "Ensured high-quality visual output across projects."
       ]
     }
   ],
@@ -126,12 +157,12 @@
       "category": "Mobile UI/UX / HRIS Product",
       "status": "Published",
       "role": "Lead UI/UX Designer",
-      "year": "2022\u20132025",
+      "year": "2022–2025",
       "summary": "Mobile-first HRIS experience for attendance, leave requests, company news, and employee administrative tasks.",
       "impact": "Simplified daily HR workflows and supported faster handoff through reusable components.",
       "image": "",
       "problem": "Legacy HR workflows were difficult to manage, causing friction in attendance tracking, leave requests, and employee communication.",
-      "goal": "Transform complex HR workflows into a seamless mobile-first experience with clear navigation and accessible UI for employees aged 25\u201350.",
+      "goal": "Transform complex HR workflows into a seamless mobile-first experience with clear navigation and accessible UI for employees aged 25–50.",
       "users": [
         "Employees",
         "HR Department",
@@ -274,7 +305,7 @@
       "category": "Design System / Product Design",
       "status": "Published",
       "role": "Senior Visual Designer",
-      "year": "2022\u20132025",
+      "year": "2022–2025",
       "summary": "Reusable components and standards to unify UI consistency across web and mobile products.",
       "impact": "30% faster design-to-development handoff and clearer implementation standards across product teams.",
       "image": "",
@@ -331,7 +362,14 @@
       "AI-Assisted Design Workflow",
       "Generative AI Visual Ideation",
       "AI Content Optimization",
-      "AI-supported Creative Research"
+      "AI-supported Creative Research",
+      "Product Design",
+      "Design Systems Development",
+      "User Flow",
+      "UX Research",
+      "Campaign Strategy",
+      "Creative Technology",
+      "Rapid MVP Development"
     ],
     "software": [
       "Figma",
@@ -343,7 +381,14 @@
       "Sketch",
       "Final Cut Pro",
       "Meta Ads",
-      "TikTok"
+      "TikTok",
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Firebase / Supabase",
+      "Git & GitHub",
+      "Lottie",
+      "AI Generative Tools"
     ],
     "collaboration": [
       "Notion",
@@ -362,7 +407,20 @@
       "Mentoring",
       "Cross-functional Collaboration",
       "Stakeholder Alignment",
-      "Brand Consistency"
+      "Brand Consistency",
+      "Prompt Engineering",
+      "API Integration",
+      "AI Workflow & Automation",
+      "Performance Optimization",
+      "Cross-functional Leadership"
+    ],
+    "aiWorkflow": [
+      "Full-Stack AI Development",
+      "AI Workflow & Automation",
+      "Prompt Engineering",
+      "AI Agents",
+      "LLM-assisted Product Development",
+      "AI-powered Documentation"
     ]
   },
   "testimonials": [

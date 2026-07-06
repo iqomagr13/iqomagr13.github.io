@@ -1,5 +1,6 @@
 const DATA_URL = 'data/portfolio-data.json';
 const THEME_KEY = 'iqoma-portfolio-theme';
+const STORAGE_KEY = 'iqoma-portfolio-data-v3';
 
 const $ = (selector, parent = document) => parent.querySelector(selector);
 const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
@@ -45,6 +46,16 @@ function getProjectId() {
 }
 
 async function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    try {
+      return JSON.parse(saved);
+    } catch (error) {
+      console.warn('Saved portfolio data is invalid. Loading website JSON instead.', error);
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  }
+
   const response = await fetch(DATA_URL, { cache: 'no-store' });
   if (!response.ok) throw new Error('Unable to load portfolio data.');
   return response.json();

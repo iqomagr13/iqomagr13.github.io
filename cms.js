@@ -1,5 +1,6 @@
 const DATA_URL = 'data/portfolio-data.json';
-const KEY = 'iqoma-admin-data';
+const KEY = 'iqoma-portfolio-data-v3';
+const LEGACY_KEY = 'iqoma-admin-data';
 const THEME_KEY = 'iqoma-portfolio-theme';
 const MAX_IMAGE_SIZE = 2 * 1024 * 1024;
 const ALLOWED_IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/webp'];
@@ -17,14 +18,16 @@ function esc(value = '') {
 }
 
 async function load() {
-  const saved = localStorage.getItem(KEY);
+  const saved = localStorage.getItem(KEY) || localStorage.getItem(LEGACY_KEY);
   if (saved) return JSON.parse(saved);
   const response = await fetch(DATA_URL, { cache: 'no-store' });
   return response.json();
 }
 
 function persistBrowser() {
-  localStorage.setItem(KEY, JSON.stringify(data));
+  const payload = JSON.stringify(data);
+  localStorage.setItem(KEY, payload);
+  localStorage.setItem(LEGACY_KEY, payload);
 }
 
 function getThemePreference() {
@@ -186,8 +189,12 @@ function useUploadedImage(file) {
   reader.onload = () => {
     const form = $('#admin-form');
     form.elements.image.value = reader.result;
+    data.projects[current] = readForm();
+    persistBrowser();
     setUploadProgress(100);
-    setUploadMessage('Photo attached successfully. This image will be stored inside exported portfolio-data.json.', 'success');
+    setUploadMessage('Photo uploaded and saved automatically. Open or refresh the homepage/detail page in this browser to see it immediately.', 'success');
+    renderList();
+    fillForm();
     preview();
   };
 
