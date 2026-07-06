@@ -72,7 +72,7 @@
       "title": "Palace Park POS System",
       "category": "Product Design / POS System",
       "status": "Published",
-      "role": "UI/UX Designer",
+      "role": "Developer & UI/UX Designer",
       "year": "2026",
       "summary": "A role-based POS concept created after observing that Palace Park still handled transaction counting manually.",
       "impact": "Helps streamline cashier flow, reduce manual calculation errors, improve stock visibility, and give management clearer sales reporting.",
@@ -86,11 +86,14 @@
         "Finance / Management"
       ],
       "process": [
-        "Observed manual sales calculation and reporting workflow.",
+        "Observed the manual sales calculation and reporting workflow.",
         "Defined the need for faster cashier flow and clearer transaction records.",
         "Mapped role-based access for super admin, tenant, cashier, and finance operations.",
-        "Designed core POS screens for sales, stock, receipts, and reporting.",
-        "Used an AI-assisted workflow with ChatGPT to accelerate planning, structure, and iteration."
+        "Designed core POS screens for sales, inventory management, receipts, and reporting.",
+        "Developed the system iteratively with AI-assisted support using ChatGPT throughout the entire process from requirements analysis, feature planning, UI/UX structuring, coding assistance, debugging, documentation, to final refinement.",
+        "Collaborated with ChatGPT to accelerate decision-making, improve development efficiency, and validate implementation approaches during the project lifecycle.",
+        "Conducted user testing sessions with the business owner and several end users (cashiers and operational staff) to validate usability, identify pain points, and gather feedback for iterative improvements.",
+        "Refined features and user interface based on testing results to ensure the system aligned with real operational needs before deployment"
       ],
       "solution": [
         "Role-based access for different operational needs.",
