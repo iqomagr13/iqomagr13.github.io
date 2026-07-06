@@ -26,8 +26,15 @@ async function load() {
 
 function persistBrowser() {
   const payload = JSON.stringify(data);
-  localStorage.setItem(KEY, payload);
-  localStorage.setItem(LEGACY_KEY, payload);
+  try {
+    localStorage.setItem(KEY, payload);
+    localStorage.setItem(LEGACY_KEY, payload);
+    return true;
+  } catch (error) {
+    console.warn('Unable to save to browser storage.', error);
+    setUploadMessage('Browser storage is full. Export JSON or use a smaller image file.', 'error');
+    return false;
+  }
 }
 
 function getThemePreference() {
@@ -150,16 +157,66 @@ function saveCurrentProject() {
   setUploadMessage('Saved to browser. Export portfolio-data.json when you are ready to publish it to GitHub.', 'success');
 }
 
-function downloadJson() {
+function getExportPayload() {
   const latest = readForm();
   if (data.projects[current]) data.projects[current] = latest;
   persistBrowser();
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = 'portfolio-data.json';
-  link.click();
-  URL.revokeObjectURL(link.href);
+  return JSON.stringify(data, null, 2);
+}
+
+function downloadJson(event) {
+  if (event) event.preventDefault();
+
+  try {
+    const payload = getExportPayload();
+    const blob = new Blob([payload], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+
+    link.href = url;
+    link.download = 'portfolio-data.json';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+      link.remove();
+    }, 1200);
+
+    setUploadMessage('portfolio-data.json downloaded. Replace data/portfolio-data.json in GitHub, then commit and push.', 'success');
+  } catch (error) {
+    console.error(error);
+    setUploadMessage('Export failed. Use Copy JSON, then paste it manually into data/portfolio-data.json on GitHub.', 'error');
+  }
+}
+
+async function copyJsonToClipboard(event) {
+  if (event) event.preventDefault();
+
+  try {
+    const payload = getExportPayload();
+    await navigator.clipboard.writeText(payload);
+    setUploadMessage('JSON copied. Open GitHub → data/portfolio-data.json → Edit → paste → Commit changes.', 'success');
+  } catch (error) {
+    console.error(error);
+    const payload = getExportPayload();
+    const textarea = document.createElement('textarea');
+    textarea.value = payload;
+    textarea.style.position = 'fixed';
+    textarea.style.inset = '16px';
+    textarea.style.zIndex = '9999';
+    textarea.style.width = 'calc(100% - 32px)';
+    textarea.style.height = 'calc(100% - 32px)';
+    textarea.style.padding = '16px';
+    textarea.style.background = '#fff';
+    textarea.style.color = '#111';
+    textarea.style.border = '3px solid #2f6bff';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    setUploadMessage('Copy failed automatically. A JSON textarea is open; press Ctrl + A then Ctrl + C.', 'error');
+  }
 }
 
 function validateImage(file) {
@@ -306,9 +363,13 @@ async function init() {
     event.preventDefault();
     saveCurrentProject();
   });
-  $('#new-project').onclick = createNewProject;
-  $('#delete-project').onclick = deleteCurrentProject;
-  $('#export-json').onclick = downloadJson;
+  $('#new-project')?.addEventListener('click', createNewProject);
+  $('#delete-project')?.addEventListener('click', deleteCurrentProject);
+  $('#export-json')?.addEventListener('click', downloadJson);
+  $('#copy-json')?.addEventListener('click', copyJsonToClipboard);
+
+  window.downloadJson = downloadJson;
+  window.copyJsonToClipboard = copyJsonToClipboard;
 }
 
 init().catch(error => {

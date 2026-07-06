@@ -646,3 +646,7 @@ blockquote { margin: 0 0 18px; color: var(--heading); font-size: clamp(1.3rem, 3
   font-size: 0.86rem;
   line-height: 1.55;
 }
+
+.auto-local-note strong {
+  color: var(--heading);
+}

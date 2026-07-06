@@ -52,6 +52,7 @@
       <div class="admin-actions">
         <button class="button primary" id="new-project" type="button">New Project</button>
         <button class="button ghost" id="export-json" type="button">Export JSON</button>
+        <button class="button ghost" id="copy-json" type="button">Copy JSON</button>
       </div>
       <p class="admin-note">Edit works here, upload the project photo, then export <code>portfolio-data.json</code> and replace it in GitHub.</p>
       <div id="project-list" class="admin-list" aria-label="Portfolio project list"></div>
@@ -99,14 +100,14 @@
 
         <div class="admin-actions">
           <button class="button primary" type="submit">Save to Browser</button>
-        <p class="auto-local-note">Image uploads are saved instantly to this browser and will appear on the homepage/detail pages after refresh. Export JSON only when you want to publish the update for everyone.</p>
           <button class="button ghost" id="delete-project" type="button">Delete</button>
         </div>
+        <p class="auto-local-note">Image uploads are saved instantly to this browser and will appear on the homepage/detail pages after refresh. Use <strong>Export JSON</strong> to download the updated data for GitHub.</p>
       </form>
       <div class="admin-preview" id="admin-preview"></div>
     </section>
   </main>
 
-  <script src="cms.js?v=stable-portfolio-2"></script>
+  <script src="cms.js?v=export-fix-1"></script>
 </body>
 </html>

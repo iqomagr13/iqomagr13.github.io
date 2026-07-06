@@ -121,3 +121,12 @@ Workflow:
 4. Open or refresh `index.html` or the project detail page to see the image immediately.
 
 Important: GitHub Pages is static. To make the uploaded image visible to everyone online, use **Export JSON** from the CMS and replace `data/portfolio-data.json` in GitHub, then commit and push.
+
+
+## Export JSON Fix
+
+The CMS now has two publish helpers:
+- **Export JSON** downloads `portfolio-data.json`.
+- **Copy JSON** copies the same JSON to clipboard as a fallback.
+
+If Export JSON is blocked by the browser, use Copy JSON, then paste the content into `data/portfolio-data.json` on GitHub and commit the change.
