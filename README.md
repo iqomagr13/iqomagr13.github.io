@@ -153,3 +153,19 @@ assets/showcase/
 ```
 
 The gallery is portrait-first, auto-sliding, hover-pauses, supports manual previous/next controls, and uses scroll-snap for mobile.
+
+
+## Project Covers + Showcase Gradient Update
+
+- Graphic Design Showcase captions now sit on top of the poster images with a transparent black gradient for better readability.
+- Uploaded project cover images were optimized into:
+
+```text
+assets/projects/
+```
+
+Mapping:
+- `UMKM POS.png` → Palace Park POS System
+- `Phinter Mobile.png` → Phinter HRIS Mobile UI/UX
+- `MECS.png` → MECS Website Redesign
+- `APTA.png` → APTA Living Social Media Strategy

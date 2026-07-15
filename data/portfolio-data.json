@@ -107,7 +107,7 @@
       "year": "2026",
       "summary": "A role-based POS concept created after observing that Palace Park still handled transaction counting manually.",
       "impact": "Helps streamline cashier flow, reduce manual calculation errors, improve stock visibility, and give management clearer sales reporting.",
-      "image": "assets/palace-park-pos-system.png",
+      "image": "assets/projects/palace-park-pos-system.webp",
       "problem": "Palace Park operations still relied on manual transaction counting and fragmented reporting, making sales, stock, and tenant performance harder to track accurately.",
       "goal": "Design a simple POS system that helps cashiers record transactions faster, supports stock visibility, and gives management a clearer operational overview.",
       "users": [
@@ -160,7 +160,7 @@
       "year": "2022\u20132025",
       "summary": "Mobile-first HRIS experience for attendance, leave requests, company news, and employee administrative tasks.",
       "impact": "Simplified daily HR workflows and supported faster handoff through reusable components.",
-      "image": "",
+      "image": "assets/projects/phinter-hris-mobile-uiux.webp",
       "problem": "Legacy HR workflows were difficult to manage, causing friction in attendance tracking, leave requests, and employee communication.",
       "goal": "Transform complex HR workflows into a seamless mobile-first experience with clear navigation and accessible UI for employees aged 25\u201350.",
       "users": [
@@ -209,7 +209,7 @@
       "year": "2025",
       "summary": "Corporate website redesign to modernize the brand image, improve hierarchy, and clarify services for B2B users.",
       "impact": "Elevated corporate credibility through cleaner layout, stronger hierarchy, and clearer CTA structure.",
-      "image": "",
+      "image": "assets/projects/mecs-website-redesign.webp",
       "problem": "The previous website felt static, outdated, and lacked strong hierarchy, making service communication less clear for B2B decision makers.",
       "goal": "Modernize the corporate website while keeping the brand credible, formal, and aligned with stakeholder expectations.",
       "users": [
@@ -258,7 +258,7 @@
       "year": "2026",
       "summary": "Localized social media strategy across Bali, BSD, and Pekanbaru using Instagram paid campaigns and TikTok organic content.",
       "impact": "Improved engagement through hook and retention optimization, strengthened regional positioning, and increased responsiveness.",
-      "image": "",
+      "image": "assets/projects/apta-living-social-media-strategy.webp",
       "problem": "A furniture brand needed localized content strategies across Bali, BSD, and Pekanbaru while maintaining efficient Instagram ads and organic TikTok engagement.",
       "goal": "Improve engagement, strengthen brand positioning, and tailor content based on audience behavior in each showroom region.",
       "users": [
