@@ -178,6 +178,90 @@ function initViewportSlider() {
   update();
 }
 
+
+function renderShowcaseGallery() {
+  const track = $('#showcase-track');
+  const viewport = $('#showcase-viewport');
+  if (!track || !viewport) return;
+
+  const gallery = siteData.showcaseGallery || {};
+  const items = Array.isArray(gallery.items) ? gallery.items : [];
+  if (!items.length) {
+    track.innerHTML = '<p class="role">Visual showcase is coming soon.</p>';
+    return;
+  }
+
+  track.innerHTML = items.map((item, index) => `
+    <article class="showcase-card" aria-label="${escapeHtml(item.title || `Showcase item ${index + 1}`)}">
+      <div class="showcase-image-wrap">
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title || 'Visual design showcase')}" loading="lazy">
+      </div>
+      <div class="showcase-caption">
+        <span>${String(index + 1).padStart(2, '0')}</span>
+        <strong>${escapeHtml(item.title || 'Visual Design')}</strong>
+        <em>${escapeHtml(item.category || 'Graphic Design')}</em>
+      </div>
+    </article>
+  `).join('');
+
+  initShowcaseCarousel();
+}
+
+function initShowcaseCarousel() {
+  const viewport = $('#showcase-viewport');
+  const track = $('#showcase-track');
+  const prev = $('#showcase-prev');
+  const next = $('#showcase-next');
+  if (!viewport || !track) return;
+
+  const cards = $$('.showcase-card', track);
+  if (!cards.length) return;
+
+  let index = 0;
+  let timer = null;
+
+  const cardStep = () => {
+    const first = cards[0];
+    if (!first) return 300;
+    const style = window.getComputedStyle(track);
+    const gap = Number.parseFloat(style.columnGap || style.gap || 18) || 18;
+    return first.getBoundingClientRect().width + gap;
+  };
+
+  const scrollToIndex = (nextIndex) => {
+    index = (nextIndex + cards.length) % cards.length;
+    viewport.scrollTo({ left: cardStep() * index, behavior: 'smooth' });
+  };
+
+  const goNext = () => scrollToIndex(index + 1);
+  const goPrev = () => scrollToIndex(index - 1);
+
+  const start = () => {
+    if (timer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = window.setInterval(goNext, 3200);
+  };
+
+  const stop = () => {
+    if (!timer) return;
+    window.clearInterval(timer);
+    timer = null;
+  };
+
+  next?.addEventListener('click', () => { stop(); goNext(); start(); });
+  prev?.addEventListener('click', () => { stop(); goPrev(); start(); });
+
+  viewport.addEventListener('mouseenter', stop);
+  viewport.addEventListener('mouseleave', start);
+  viewport.addEventListener('focusin', stop);
+  viewport.addEventListener('focusout', start);
+
+  viewport.addEventListener('scroll', () => {
+    index = Math.round(viewport.scrollLeft / cardStep());
+  }, { passive: true });
+
+  start();
+}
+
 function renderSkills() {
   const board = $('#skills-board');
   const tagsRoot = $('#skill-tags');
@@ -365,6 +449,7 @@ async function init() {
   renderExperience();
   renderProjects();
   initViewportSlider();
+  renderShowcaseGallery();
   renderSkills();
   renderTestimonials();
   renderProcess();

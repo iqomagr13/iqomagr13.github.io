@@ -130,3 +130,26 @@ The CMS now has two publish helpers:
 - **Copy JSON** copies the same JSON to clipboard as a fallback.
 
 If Export JSON is blocked by the browser, use Copy JSON, then paste the content into `data/portfolio-data.json` on GitHub and commit the change.
+
+
+## Visual Showcase Gallery
+
+A new homepage section has been added:
+
+```text
+#visual-showcase
+```
+
+It renders items from:
+
+```text
+data/portfolio-data.json → showcaseGallery.items
+```
+
+Images from the uploaded archive were optimized into WebP files inside:
+
+```text
+assets/showcase/
+```
+
+The gallery is portrait-first, auto-sliding, hover-pauses, supports manual previous/next controls, and uses scroll-snap for mobile.
