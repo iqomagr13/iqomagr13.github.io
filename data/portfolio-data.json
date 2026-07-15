@@ -476,101 +476,101 @@
   },
   "showcaseGallery": {
     "title": "Selected visual design showcase.",
-    "intro": "A quick gallery of event flyers, hospitality promos, campaign visuals, and graphic design explorations.",
+    "intro": "A curated gallery of hospitality flyers, event campaigns, F&B promos, CSR visuals, and outdoor banner work.",
     "items": [
       {
-        "title": "27X15Cm Greeting Cianjur",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Selamat Hari Jadi Kabupaten Cianjur ke-349",
+        "category": "Hospitality Greeting Design / Print Visual",
         "orientation": "Portrait",
         "image": "assets/showcase/01-27x15cm-greeting-cianjur.webp"
       },
       {
-        "title": "75X250Cm 01",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Palace Park Public Opening Banner",
+        "category": "Outdoor Banner / Event Promotion",
         "orientation": "Portrait",
         "image": "assets/showcase/03-75x250cm-01.webp"
       },
       {
-        "title": "75X250Cm 02",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Palace Park Public Opening Banner \u2014 Green Variant",
+        "category": "Outdoor Banner / Event Promotion",
         "orientation": "Portrait",
         "image": "assets/showcase/05-75x250cm-02.webp"
       },
       {
-        "title": "Cleaning Bleach",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Cleaning Bleach Staff Event Poster",
+        "category": "Internal Event Flyer / CSR Visual",
         "orientation": "Portrait",
         "image": "assets/showcase/07-cleaning-bleach.webp"
       },
       {
-        "title": "Donor & Warung",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Donor Darah & Warung Berkah",
+        "category": "CSR Event Flyer / Community Campaign",
         "orientation": "Portrait",
         "image": "assets/showcase/09-donor-warung.webp"
       },
       {
-        "title": "Hut Cianjur Minuman",
-        "category": "Graphic Design / Event Flyer",
+        "title": "School Holiday Package",
+        "category": "Hotel Promo Flyer / Family Campaign",
         "orientation": "Portrait",
         "image": "assets/showcase/11-hut-cianjur-minuman.webp"
       },
       {
-        "title": "Hut Cianjur 02",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Kopi Susu Gula Aren",
+        "category": "F&B Promo Flyer / Beverage Campaign",
         "orientation": "Portrait",
         "image": "assets/showcase/13-hut-cianjur-02.webp"
       },
       {
-        "title": "Hut Cjr",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Promo HUT Cianjur Room Package",
+        "category": "Hotel Room Promo / Campaign Flyer",
         "orientation": "Portrait",
         "image": "assets/showcase/15-hut-cjr.webp"
       },
       {
-        "title": "Logo Talent 13 Desember 2025",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Friday Chill n Vibes",
+        "category": "Music Event Flyer / Social Media Visual",
         "orientation": "Portrait",
         "image": "assets/showcase/17-logo-talent-13-desember-2025.webp"
       },
       {
-        "title": "Makanan",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Meat Lover Pizza Combo",
+        "category": "F&B Promo Flyer / Food Campaign",
         "orientation": "Portrait",
         "image": "assets/showcase/19-makanan.webp"
       },
       {
-        "title": "0F16A21B 98Ef 428D 898A 69A5B579C9Ba",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Lemon Pea Bloom",
+        "category": "Beverage Promo / Social Media Visual",
         "orientation": "Portrait",
         "image": "assets/showcase/21-0f16a21b-98ef-428d-898a-69a5b579c9ba.webp"
       },
       {
-        "title": "Cce30Bab Ab35 436E A366 3228E4Ad6904",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Weekend Escape",
+        "category": "Night Event Flyer / Entertainment Promo",
         "orientation": "Portrait",
         "image": "assets/showcase/23-cce30bab-ab35-436e-a366-3228e4ad6904.webp"
       },
       {
-        "title": "Chatgpt Image Jul 7, 2026, 02 49 16 Pm",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Saturday Escape",
+        "category": "Night Event Flyer / Entertainment Promo",
         "orientation": "Portrait",
         "image": "assets/showcase/25-chatgpt-image-jul-7-2026-02-49-16-pm.webp"
       },
       {
-        "title": "Chatgpt Image Jul 14, 2026, 12 12 34 Pm",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Ladies Escape",
+        "category": "Invitation Flyer / Night Event Promo",
         "orientation": "Portrait",
         "image": "assets/showcase/27-chatgpt-image-jul-14-2026-12-12-34-pm.webp"
       },
       {
-        "title": "Chatgpt Image Jun 20, 2026, 02 33 13 Pm",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Blue Citrus",
+        "category": "Beverage Promo / Social Media Visual",
         "orientation": "Portrait",
         "image": "assets/showcase/29-chatgpt-image-jun-20-2026-02-33-13-pm.webp"
       },
       {
-        "title": "E89E80A9 6D4F 4B31 8Cdd 36Df8Ddeb24A",
-        "category": "Graphic Design / Event Flyer",
+        "title": "Promo Kemerdekaan Food Platter",
+        "category": "Independence Day Promo / F&B Flyer",
         "orientation": "Portrait",
         "image": "assets/showcase/31-e89e80a9-6d4f-4b31-8cdd-36df8ddeb24a.webp"
       }
