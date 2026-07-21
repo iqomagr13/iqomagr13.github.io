@@ -99,6 +99,68 @@
   ],
   "projects": [
     {
+      "id": "smoothclean-id-website",
+      "title": "Smoothclean.ID Website",
+      "category": "Web Design / Frontend Development / SEO",
+      "status": "Published",
+      "role": "UI/UX Designer & AI-assisted Frontend Developer",
+      "year": "2026",
+      "summary": "Designed and developed a premium service website for Smoothclean.ID, a Bandung-based shoe and leather care brand, from visual direction to frontend implementation and SEO article structure.",
+      "impact": "Turned a service business into a clearer digital experience with structured service categories, pricing, before-after proof, WhatsApp conversion paths, and SEO-ready educational articles.",
+      "image": "assets/projects/smoothclean-id-website.webp",
+      "liveUrl": "https://smoothclean-id.iqomagr13.workers.dev/",
+      "problem": "Smoothclean.ID needed a sharper digital presence that could explain multiple care services, build trust, clarify pricing, and guide customers to order through WhatsApp without overwhelming them.",
+      "goal": "Create a clean, premium, conversion-focused website that presents shoe care, boots care, bag care, helmet care, leather jacket care, and baby gear cleaning in a structured and credible way.",
+      "users": [
+        "Sneaker and shoe care customers",
+        "Premium boots owners",
+        "Leather goods customers",
+        "Helmet owners",
+        "Parents looking for baby gear cleaning",
+        "Bandung customers looking for pickup and delivery"
+      ],
+      "process": [
+        "Defined the website structure from hero, services, pricing, proof, workflow, testimonials, articles, and contact.",
+        "Created a visual direction that feels premium, clean, practical, and trustworthy for care services.",
+        "Designed service categories with clear treatment descriptions and estimated turnaround time.",
+        "Developed the frontend into a live responsive website.",
+        "Added SEO article structure to support organic search around shoe care, boots care, and baby gear cleaning topics.",
+        "Integrated WhatsApp CTA flow to make inquiries and orders easier."
+      ],
+      "solution": [
+        "Premium landing page with strong headline and service positioning.",
+        "Six service category blocks for shoes, boots, bags, helmets, leather jackets, and baby gear.",
+        "Clear pricing section with estimated treatment cost and processing time.",
+        "Before-after result section to strengthen trust.",
+        "Three-step order flow: choose service, pickup/drop-off, receive notification.",
+        "SEO article section for educational content and search visibility.",
+        "Direct WhatsApp CTA for conversion."
+      ],
+      "outcome": "The website makes Smoothclean.ID easier to understand, easier to trust, and easier to contact. It also demonstrates my ability to combine UI/UX design, frontend development, SEO content structure, and business-oriented digital communication.",
+      "tools": [
+        "UI/UX Design",
+        "Responsive Web Design",
+        "Frontend Development",
+        "SEO Copywriting",
+        "AI-assisted Development Workflow",
+        "GitHub / Cloudflare Workers"
+      ],
+      "sections": [
+        {
+          "title": "From service complexity to clear information architecture",
+          "body": "The business covers many types of care services, so the main UX challenge was organizing them into a structure that users can scan quickly while still understanding the differences between each treatment."
+        },
+        {
+          "title": "Designed for trust and conversion",
+          "body": "The website uses proof points such as operation year, customer rating, before-after visuals, clear pricing, testimonials, and pickup information to reduce hesitation before users contact via WhatsApp."
+        },
+        {
+          "title": "SEO as part of the product experience",
+          "body": "Instead of treating articles as a separate blog, the article section is integrated as part of the customer education journey, helping users learn how to care for boots, sneakers, helmets, and baby gear."
+        }
+      ]
+    },
+    {
       "id": "palace-park-pos-system",
       "title": "Palace Park POS System",
       "category": "Product Design / POS System",

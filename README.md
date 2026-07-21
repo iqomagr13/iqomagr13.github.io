@@ -169,3 +169,24 @@ Mapping:
 - `Phinter Mobile.png` → Phinter HRIS Mobile UI/UX
 - `MECS.png` → MECS Website Redesign
 - `APTA.png` → APTA Living Social Media Strategy
+
+
+## Smoothclean.ID Portfolio Project
+
+A new project has been added:
+
+```text
+Smoothclean.ID Website
+```
+
+Live URL:
+
+```text
+https://smoothclean-id.iqomagr13.workers.dev/
+```
+
+The project is positioned as a web design, frontend development, and SEO case study. A new cover image is stored at:
+
+```text
+assets/projects/smoothclean-id-website.webp
+```
