@@ -635,6 +635,18 @@
         "category": "Independence Day Promo / F&B Flyer",
         "orientation": "Portrait",
         "image": "assets/showcase/31-e89e80a9-6d4f-4b31-8cdd-36df8ddeb24a.webp"
+      },
+      {
+        "title": "Season of Serenity Spa Promo",
+        "category": "Spa & Wellness Promo / Social Media Flyer",
+        "orientation": "Portrait",
+        "image": "assets/showcase/promo-agustus-spa-serenity.webp"
+      },
+      {
+        "title": "Get Fit Get Strong Gym Promo",
+        "category": "Fitness Membership Promo / Social Media Flyer",
+        "orientation": "Portrait",
+        "image": "assets/showcase/promo-agustus-gym-membership.webp"
       }
     ]
   }
